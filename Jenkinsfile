@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'sudo docker build -t patientregistrationapp .'
+                sh 'docker build -t patientregistrationapp .'
             }
         }
 
