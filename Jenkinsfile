@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t patientregistrationapp .'
+                sh 'docker build -t simplemavenproject .'
             }
         }
 
@@ -40,14 +40,14 @@ pipeline {
 
         success {
             mail to: 'hsharshitha46@gmail.com',
-            subject: 'Jenkins Build SUCCESS',
-            body: 'Patient Registration App Build Successful'
+            subject: 'BUILD SUCCESS',
+            body: 'Simple Maven Project Build Successful'
         }
 
         failure {
             mail to: 'hsharshitha46@gmail.com',
-            subject: 'Jenkins Build FAILED',
-            body: 'Patient Registration App Build Failed'
+            subject: 'BUILD FAILED',
+            body: 'Simple Maven Project Build Failed'
         }
 
     }
