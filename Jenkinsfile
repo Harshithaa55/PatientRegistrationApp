@@ -2,10 +2,6 @@ pipeline {
 
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
 
         stage('Clone Repository') {
@@ -44,13 +40,13 @@ pipeline {
 
         success {
             mail to: 'hsharshitha46@gmail.com',
-            subject: 'BUILD SUCCESS',
+            subject: 'Jenkins Build SUCCESS',
             body: 'Patient Registration App Build Successful'
         }
 
         failure {
             mail to: 'hsharshitha46@gmail.com',
-            subject: 'BUILD FAILED',
+            subject: 'Jenkins Build FAILED',
             body: 'Patient Registration App Build Failed'
         }
 
